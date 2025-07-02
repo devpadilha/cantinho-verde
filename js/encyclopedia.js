@@ -125,7 +125,9 @@ class EncyclopediaManager {
     let filtered = this.plants
 
     // Apply category filter
-    if (this.currentFilter !== "all") {
+    if (this.currentFilter === "favorites") {
+      filtered = filtered.filter((plant) => plant.isFavorite)
+    } else if (this.currentFilter !== "all") {
       filtered = filtered.filter((plant) => plant.category === this.currentFilter)
     }
 
