@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Cantinho Verde - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navbar will be injected here by navbar.js -->
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Add Plant Section -->
+        <section class="mb-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Adicionar Nova Planta</h2>
+                <form class="plant-form" id="plant-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+                        <div class="form-group">
+                            <label for="plant-name" class="block text-sm font-medium text-gray-700 mb-2">Nome da Planta</label>
+                            <input type="text" id="plant-name" class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="plant-species" class="block text-sm font-medium text-gray-700 mb-2">Espécie</label>
+                            <input type="text" id="plant-species" class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="watering-frequency" class="block text-sm font-medium text-gray-700 mb-2">Frequência de Rega (dias)</label>
+                            <input type="number" id="watering-frequency" class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" min="1" max="30" value="7">
+                        </div>
+                        
+                        <button type="submit" class="bg-primary-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-600 transition-colors h-fit">
+                            Adicionar Planta
+                        </button>
+                    </div>
+                    
+                    <div class="form-group mt-4">
+                        <label for="plant-image" class="block text-sm font-medium text-gray-700 mb-2">URL da Imagem (opcional)</label>
+                        <input type="url" id="plant-image" class="w-full px-3 py-2 border-2 border-gray-200 rounded-lg focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" placeholder="https://exemplo.com/imagem.jpg">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Plants Section -->
+        <section class="mb-8">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+                    <h2 class="text-2xl font-bold text-gray-800">Minhas Plantas</h2>
+                    <div class="flex gap-2 flex-wrap">
+                        <button class="filter-btn px-4 py-2 bg-primary-500 text-white rounded-full font-medium text-sm hover:bg-primary-600 transition-colors active" data-filter="all">Todas</button>
+                        <button class="filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-medium text-sm hover:bg-gray-200 transition-colors" data-filter="needs-water">Precisam de Água</button>
+                        <button class="filter-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-medium text-sm hover:bg-gray-200 transition-colors" data-filter="watered">Regadas</button>
+                    </div>
+                </div>
+                
+                <div class="plants-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="plants-grid">
+                    <!-- Plants will be dynamically added here -->
+                </div>
+                
+                <div class="empty-state text-center py-12 hidden" id="empty-state">
+                    <div class="text-6xl mb-4">🌿</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Nenhuma planta cadastrada</h3>
+                    <p class="text-gray-600">Adicione sua primeira planta para começar a cuidar do seu jardim!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Estatísticas</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-primary-50 rounded-lg p-4 text-center border border-primary-100">
+                        <div class="text-2xl font-bold text-primary-600" id="total-plants">0</div>
+                        <div class="text-sm text-primary-800 font-medium">Total de Plantas</div>
+                    </div>
+                    <div class="bg-orange-50 rounded-lg p-4 text-center border border-orange-100">
+                        <div class="text-2xl font-bold text-orange-600" id="plants-need-water">0</div>
+                        <div class="text-sm text-orange-800 font-medium">Precisam de Água</div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-4 text-center border border-green-100">
+                        <div class="text-2xl font-bold text-green-600" id="plants-watered-today">0</div>
+                        <div class="text-sm text-green-800 font-medium">Regadas Hoje</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-8">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-600">
+            <p>&copy; 2024 Meu Cantinho Verde - Desenvolvido com 💚</p>
+        </div>
+    </footer>
+
+    <!-- Load Components -->
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
