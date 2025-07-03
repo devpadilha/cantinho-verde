@@ -114,12 +114,12 @@ class EncyclopediaManager {
       button.addEventListener("click", (e) => {
         // Update active state
         filterButtons.forEach((btn) => {
-          btn.classList.remove("bg-primary-500", "text-white", "active")
+          btn.classList.remove("bg-green-500", "text-white", "active")
           btn.classList.add("bg-gray-100", "text-gray-700")
         })
 
         e.target.classList.remove("bg-gray-100", "text-gray-700")
-        e.target.classList.add("bg-primary-500", "text-white", "active")
+        e.target.classList.add("bg-green-500", "text-white", "active")
 
         this.currentFilter = e.target.dataset.filter
         this.renderPlants()
@@ -184,7 +184,7 @@ class EncyclopediaManager {
                 <h3 class="text-lg font-bold text-gray-800 mb-1">${plant.name}</h3>
                 <p class="text-sm text-gray-500 italic mb-3">${plant.scientificName}</p>
                 <p class="text-sm text-gray-600 mb-4 line-clamp-2">${plant.description}</p>
-                <button class="details-btn w-full bg-primary-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-primary-600 transition-colors" data-plant-id="${plant.id}">
+                <button class="details-btn w-full bg-green-500 text-white py-2 px-4 rounded-lg font-medium hover:bg-green-600 transition-colors" data-plant-id="${plant.id}">
                     Ver detalhes
                 </button>
             </div>

@@ -51,11 +51,11 @@ class PlantManager {
   setActiveFilter(activeButton) {
     const filterButtons = document.querySelectorAll(".filter-btn");
     filterButtons.forEach((button) => {
-      button.classList.remove("bg-primary-500", "text-white", "active");
+      button.classList.remove("bg-green-500", "text-white", "active");
       button.classList.add("bg-gray-100", "text-gray-700");
     });
     activeButton.classList.remove("bg-gray-100", "text-gray-700");
-    activeButton.classList.add("bg-primary-500", "text-white", "active");
+    activeButton.classList.add("bg-green-500", "text-white", "active");
   }
 
   addNewPlant() {
@@ -251,7 +251,7 @@ class PlantManager {
                 </div>
                 
                 <div class="flex gap-2 pt-2">
-                    <button class="flex-1 bg-primary-500 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-primary-600 transition-colors water-btn">
+                    <button class="flex-1 bg-green-500 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-green-600 transition-colors water-btn">
                         Regar
                     </button>
                     <button class="bg-red-500 text-white py-2 px-3 rounded-lg text-sm font-medium hover:bg-red-600 transition-colors delete-btn">

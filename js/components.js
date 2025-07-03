@@ -28,25 +28,25 @@ class Navbar {
         <div class="container mx-auto px-4">
           <div class="flex items-center justify-between h-16">
             <div class="flex items-center space-x-3">
-              <i class="fas fa-seedling text-primary-500 text-xl"></i>
-              <span class="hidden md:inline text-xl font-bold text-gray-800">Meu Cantinho Verde</span>
+              <i class="fas fa-seedling text-green-500 text-xl"></i>
+              <span class="hidden md:inline dtext-xl font-bold text-gray-800">Meu Cantinho Verde</span>
             </div>
             <div class="flex items-center space-x-4">
               <a 
                 href="index.html"
-                class="nav-link ${this.currentPage === "dashboard" ? "text-primary-500 font-semibold" : "text-gray-600 hover:text-primary-500"} transition-colors font-medium"
+                class="nav-link ${this.currentPage === "dashboard" ? "text-green-500 font-semibold" : "text-gray-600 hover:text-green-500"} transition-colors font-medium"
               >
                 Dashboard
               </a>
               <a 
                 href="encyclopedia.html"
-                class="nav-link ${this.currentPage === "encyclopedia" ? "text-primary-500 font-semibold" : "text-gray-600 hover:text-primary-500"} transition-colors font-medium"
+                class="nav-link ${this.currentPage === "encyclopedia" ? "text-green-500 font-semibold" : "text-gray-600 hover:text-green-500"} transition-colors font-medium"
               >
                 Enciclopédia
               </a>
               <button 
                 id="achievements-btn"
-                class="bg-primary-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-600 transition-colors flex items-center space-x-2"
+                class="bg-green-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-600 transition-colors flex items-center space-x-2"
               >
                 <i class="fas fa-trophy"></i>
                 <span>Conquistas</span>
@@ -131,7 +131,7 @@ class AchievementsModal {
   showUnlockNotification(achievementId) {
     const notification = document.createElement("div")
     notification.className =
-      "fixed top-4 right-4 bg-primary-500 text-white p-4 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300"
+      "fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300"
     notification.innerHTML = `
       <div class="flex items-center space-x-3">
         <i class="fas fa-trophy text-xl"></i>
@@ -191,7 +191,7 @@ class AchievementsModal {
       <div id="achievements-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
         <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
           <!-- Modal Header -->
-          <div class="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-6 relative">
+          <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 relative">
             <button 
               id="close-achievements"
               class="absolute top-4 right-4 w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
@@ -202,115 +202,115 @@ class AchievementsModal {
               <i class="fas fa-trophy text-2xl"></i>
               <h2 class="text-2xl font-bold">Minhas Conquistas</h2>
             </div>
-            <p class="text-primary-100 mt-2">Acompanhe seu progresso como jardineiro</p>
+            <p class="text-green-100 mt-2">Acompanhe seu progresso como jardineiro</p>
           </div>
 
           <!-- Modal Content -->
           <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
             <!-- Progress Summary -->
-            <div class="bg-primary-50 rounded-xl p-4 mb-6 border border-primary-100">
+            <div class="bg-green-50 rounded-xl p-4 mb-6 border border-green-100">
               <div class="flex items-center justify-between mb-2">
-                <span class="text-primary-800 font-medium">Progresso Geral</span>
-                <span class="text-primary-600 font-bold" id="achievement-progress">6/12 Conquistas</span>
+                <span class="text-green-800 font-medium">Progresso Geral</span>
+                <span class="text-green-600 font-bold" id="achievement-progress">6/12 Conquistas</span>
               </div>
-              <div class="w-full bg-primary-200 rounded-full h-3">
-                <div class="bg-primary-500 h-3 rounded-full" id="progress-bar" style="width: 50%"></div>
+              <div class="w-full bg-green-200 rounded-full h-3">
+                <div class="bg-green-500 h-3 rounded-full" id="progress-bar" style="width: 50%"></div>
               </div>
             </div>
 
             <!-- Achievements Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <!-- Unlocked Achievements -->
-              <div class="bg-white border-2 border-primary-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+              <div class="bg-white border-2 border-green-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                 <div class="flex items-start space-x-4">
-                  <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-seedling text-white text-lg"></i>
                   </div>
                   <div class="flex-1">
                     <h3 class="font-bold text-gray-800 mb-1">Primeiro Plantio</h3>
                     <p class="text-sm text-gray-600 mb-2">Adicione sua primeira planta ao jardim</p>
                     <div class="flex items-center space-x-2">
-                      <span class="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
+                      <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
                       <span class="text-xs text-gray-500">há 2 dias</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white border-2 border-primary-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+              <div class="bg-white border-2 border-green-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                 <div class="flex items-start space-x-4">
-                  <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-tint text-white text-lg"></i>
                   </div>
                   <div class="flex-1">
                     <h3 class="font-bold text-gray-800 mb-1">Regador Dedicado</h3>
                     <p class="text-sm text-gray-600 mb-2">Regue suas plantas por 7 dias consecutivos</p>
                     <div class="flex items-center space-x-2">
-                      <span class="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
+                      <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
                       <span class="text-xs text-gray-500">há 1 dia</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white border-2 border-primary-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+              <div class="bg-white border-2 border-green-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                 <div class="flex items-start space-x-4">
-                  <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-leaf text-white text-lg"></i>
                   </div>
                   <div class="flex-1">
                     <h3 class="font-bold text-gray-800 mb-1">Colecionador Verde</h3>
                     <p class="text-sm text-gray-600 mb-2">Tenha 5 plantas diferentes em seu jardim</p>
                     <div class="flex items-center space-x-2">
-                      <span class="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
+                      <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
                       <span class="text-xs text-gray-500">há 3 horas</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white border-2 border-primary-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+              <div class="bg-white border-2 border-green-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                 <div class="flex items-start space-x-4">
-                  <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-calendar-check text-white text-lg"></i>
                   </div>
                   <div class="flex-1">
                     <h3 class="font-bold text-gray-800 mb-1">Organizador</h3>
                     <p class="text-sm text-gray-600 mb-2">Mantenha todas as plantas em dia por uma semana</p>
                     <div class="flex items-center space-x-2">
-                      <span class="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
+                      <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
                       <span class="text-xs text-gray-500">há 5 horas</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white border-2 border-primary-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+              <div class="bg-white border-2 border-green-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                 <div class="flex items-start space-x-4">
-                  <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-heart text-white text-lg"></i>
                   </div>
                   <div class="flex-1">
                     <h3 class="font-bold text-gray-800 mb-1">Amante das Plantas</h3>
                     <p class="text-sm text-gray-600 mb-2">Favorite 3 plantas na enciclopédia</p>
                     <div class="flex items-center space-x-2">
-                      <span class="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
+                      <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
                       <span class="text-xs text-gray-500">há 2 horas</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="bg-white border-2 border-primary-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+              <div class="bg-white border-2 border-green-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                 <div class="flex items-start space-x-4">
-                  <div class="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-clock text-white text-lg"></i>
                   </div>
                   <div class="flex-1">
                     <h3 class="font-bold text-gray-800 mb-1">Pontual</h3>
                     <p class="text-sm text-gray-600 mb-2">Regue uma planta no dia exato recomendado</p>
                     <div class="flex items-center space-x-2">
-                      <span class="bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
+                      <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">Desbloqueada</span>
                       <span class="text-xs text-gray-500">há 1 hora</span>
                     </div>
                   </div>
