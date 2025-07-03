@@ -29,7 +29,7 @@ class Navbar {
           <div class="flex items-center justify-between h-16">
             <div class="flex items-center space-x-3">
               <i class="fas fa-seedling text-primary-500 text-xl"></i>
-              <span class="text-xl font-bold text-gray-800">Meu Cantinho Verde</span>
+              <span class="hidden md:inline text-xl font-bold text-gray-800">Meu Cantinho Verde</span>
             </div>
             <div class="flex items-center space-x-4">
               <a 
