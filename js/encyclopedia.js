@@ -7,7 +7,7 @@ const encyclopediaPlants = [
     category: "folhagem",
     description:
       "Planta tropical conhecida por suas folhas grandes e perfuradas. Ideal para ambientes internos com boa luminosidade.",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "assets/costela-de-adao.webp",
     isFavorite: false,
   },
   {
@@ -16,7 +16,7 @@ const encyclopediaPlants = [
     scientificName: "Echeveria elegans",
     category: "suculentas",
     description: "Suculenta em formato de roseta com folhas carnudas. Muito resistente e fácil de cuidar.",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "assets/echeveria.jpg",
     isFavorite: true,
   },
   {
@@ -25,35 +25,17 @@ const encyclopediaPlants = [
     scientificName: "Nephrolepis exaltata",
     category: "samambaias",
     description: "Planta ornamental com folhas delicadas. Perfeita para ambientes úmidos e com sombra parcial.",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "assets/samambaia.jpg",
     isFavorite: false,
   },
   {
     id: 4,
-    name: "Violeta Africana",
-    scientificName: "Saintpaulia ionantha",
-    category: "flores",
-    description: "Pequena planta com flores coloridas. Ideal para decoração de interiores e fácil manutenção.",
-    image: "/placeholder.svg?height=200&width=300",
-    isFavorite: false,
-  },
-  {
-    id: 5,
     name: "Cacto Barril",
     scientificName: "Echinocactus grusonii",
     category: "suculentas",
     description: "Cacto esférico com espinhos dourados. Extremamente resistente à seca e de crescimento lento.",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "assets/cacto.jpg",
     isFavorite: false,
-  },
-  {
-    id: 6,
-    name: "Jiboia",
-    scientificName: "Epipremnum aureum",
-    category: "folhagem",
-    description: "Planta trepadeira com folhas variegadas. Muito popular para decoração de interiores.",
-    image: "/placeholder.svg?height=200&width=300",
-    isFavorite: true,
   },
 ]
 
