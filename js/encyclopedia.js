@@ -56,6 +56,45 @@ class EncyclopediaManager {
     }))
   }
 
+  showPlantDetails(plantId) {
+    const plant = this.plants.find((p) => p.id === plantId);
+    if (!plant) return;
+
+    const modal = document.getElementById('details-modal');
+    const modalImage = document.getElementById('details-modal-image');
+    const modalName = document.getElementById('details-modal-name');
+    const modalScientific = document.getElementById('details-modal-scientific');
+    const modalDescription = document.getElementById('details-modal-description');
+    const closeModalBtn = document.getElementById('details-modal-close');
+
+    modalImage.style.backgroundImage = `url('${plant.image}')`;
+    modalName.textContent = plant.name;
+    modalScientific.textContent = plant.scientificName;
+    modalDescription.textContent = plant.description;
+
+    modal.classList.remove('hidden');
+
+    const closeModal = () => modal.classList.add('hidden');
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target.id === 'details-modal') {
+        closeModal();
+      }
+    });
+
+    // Lógica de conquista
+    const viewedPlants = JSON.parse(localStorage.getItem("viewedPlants") || "[]");
+    if (!viewedPlants.includes(plantId)) {
+      viewedPlants.push(plantId);
+      localStorage.setItem("viewedPlants", JSON.stringify(viewedPlants));
+
+      if (window.achievementsModal) {
+          window.achievementsModal.updateProgress("explorador-verde", viewedPlants.length);
+      }
+    }
+  }
+
   saveFavorites() {
     const favorites = this.plants.filter((plant) => plant.isFavorite).map((plant) => plant.id)
     localStorage.setItem("favoritePlants", JSON.stringify(favorites))
@@ -160,28 +199,7 @@ class EncyclopediaManager {
 
     return article
   }
-
-  showPlantDetails(plantId) {
-    const plant = this.plants.find((p) => p.id === plantId)
-    if (plant) {
-      alert(`Detalhes de ${plant.name}:\n\n${plant.description}\n\nNome científico: ${plant.scientificName}`)
-
-      // Track plant views for achievement
-      const viewedPlants = JSON.parse(localStorage.getItem("viewedPlants") || "[]")
-      if (!viewedPlants.includes(plantId)) {
-        viewedPlants.push(plantId)
-        localStorage.setItem("viewedPlants", JSON.stringify(viewedPlants))
-
-        // Check for achievement
-        if (viewedPlants.length >= 20 && window.achievementsModal) {
-          window.achievementsModal.unlockAchievement("explorador-verde")
-        } else if (window.achievementsModal) {
-          window.achievementsModal.updateProgress("explorador-verde", viewedPlants.length)
-        }
-      }
-    }
-  }
-
+  
   renderPlants() {
     const grid = document.getElementById("plants-encyclopedia-grid")
     const filteredPlants = this.getFilteredPlants()

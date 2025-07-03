@@ -94,6 +94,22 @@
             <p>&copy; 2024 Meu Cantinho Verde</p>
         </div>
     </footer>
+    
+    <div id="details-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col">
+            <div id="details-modal-image" class="w-full h-48 bg-gray-200 bg-cover bg-center"></div>
+            <div class="p-6 overflow-y-auto">
+                <h3 id="details-modal-name" class="text-2xl font-bold text-gray-800 mb-1">Nome da Planta</h3>
+                <p id="details-modal-scientific" class="text-md text-gray-500 italic mb-4">Nome Científico</p>
+                <p id="details-modal-description" class="text-gray-600">Descrição completa da planta.</p>
+            </div>
+            <div class="p-4 bg-gray-50 border-t border-gray-200 text-right">
+                <button id="details-modal-close" class="px-6 py-2 bg-primary-500 text-white rounded-lg font-medium hover:bg-primary-600 transition-colors">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Load Components -->
     <script src="js/components.js"></script>
